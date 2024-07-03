@@ -41,7 +41,7 @@ const LoginScreen: React.FC<LoginProps> = ({ navigation }) => {
   };
 
   const goToSignUp = () => {
-    navigation.navigate('registration');
+    navigation.navigate('Registration');
   };
 
   const goToForgotPassword=() =>{
@@ -76,7 +76,7 @@ const LoginScreen: React.FC<LoginProps> = ({ navigation }) => {
         <Text style={styles.linkTextV}>Forget Password?</Text>
       </TouchableOpacity>
 
-      <Text style={styles.titleA}>
+      <Text style={styles.title}>
         <Text style={styles.titlefgt}>
           <Text style={{ color: '#070530' }}>facebook     </Text>
           <Text style={{ color: '#800303' }}>google       </Text>
@@ -132,9 +132,9 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   logo: {
-    height: 150,
-    marginBottom: 20,
-    width: 250,
+    width: 126,
+    height: 81.3,
+    alignSelf: 'center',
   },
   title: {
     fontSize: 20,

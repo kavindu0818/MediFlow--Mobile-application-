@@ -232,8 +232,8 @@ const styles = StyleSheet.create({
     fontWeight: '400',
   },
   input: {
-    width: '100%',
-    height: 48,
+    width: 300,
+    height: 40,
     borderColor: 'gray',
     borderWidth: 1,
     borderRadius: 8,
@@ -242,7 +242,7 @@ const styles = StyleSheet.create({
   },
   fileButton: {
     backgroundColor: '#2196F3',
-    borderRadius: 8,
+    borderRadius: 100,
     paddingVertical: 16,
     alignItems: 'center',
     marginBottom: 16,
@@ -251,16 +251,21 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     fontSize: 16,
+    borderRadius: 100,
   },
   registerButton: {
-    backgroundColor: '#4CAF50',
-    borderRadius: 8,
+    backgroundColor: 'white',
+    borderRadius: 100,
     paddingVertical: 16,
     alignItems: 'center',
     marginBottom: 16,
+    borderColor: 'black', // Set the border color to black
+    borderWidth: 1, // Set the border width
+    // borderStyle: 'solid', // Optional: default is 'solid'. You can also use 'dotted' or 'dashed'
   },
+
   registerButtonText: {
-    color: 'white',
+    color: 'black',
     fontWeight: 'bold',
     fontSize: 18,
   },
