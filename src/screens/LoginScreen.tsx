@@ -1,57 +1,34 @@
 import React, { useState } from 'react';
 import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { NavigationProp } from '@react-navigation/native';
 
 const imagePath = require('../../assets/mediFlowLogo.jpg');
 
-interface LoginProps {
-  navigation: any;
-}
+type LoginScreenProps = {
+  navigation: NavigationProp<any>;
+};
 
-const LoginScreen: React.FC<LoginProps> = ({ navigation }) => {
+const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLoginPress = () => {
     console.log('Login button pressed');
-    checkCredentials(username, password);
-  };
-
-  const checkCredentials = async (username: string, password: string) => {
-    try {
-      const storedUsers = await AsyncStorage.getItem('users');
-      if (storedUsers) {
-        const users = JSON.parse(storedUsers);
-        console.log('Stored users:', users);
-        const user = users.find((user: any) => user.email === username && user.password === password);
-
-        if (user) {
-          console.log('Login successful');
-          navigation.navigate('Home');
-        } else {
-          console.log('Invalid credentials');
-        }
-      } else {
-        console.log('No user data found');
-      }
-    } catch (error) {
-      console.error('Error checking credentials:', error);
-    }
+    navigation.navigate('Dash');
   };
 
   const goToSignUp = () => {
     navigation.navigate('Registration');
   };
 
-  const goToForgotPassword=() =>{
+  const goToForgotPassword = () => {
+    // Navigation logic for Forgot Password
+  };
 
-  }
   return (
     <View style={styles.container}>
       <Image source={imagePath} style={styles.logo} />
       <Text style={styles.title}>Login into account</Text>
-
       <TextInput
         style={styles.input}
         placeholder="User name"
@@ -67,23 +44,19 @@ const LoginScreen: React.FC<LoginProps> = ({ navigation }) => {
         onChangeText={setPassword}
         secureTextEntry
       />
-
       <TouchableOpacity style={styles.button} onPress={handleLoginPress}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
-
       <TouchableOpacity onPress={goToForgotPassword}>
         <Text style={styles.linkTextV}>Forget Password?</Text>
       </TouchableOpacity>
-
       <Text style={styles.title}>
         <Text style={styles.titlefgt}>
-          <Text style={{ color: '#070530' }}>facebook     </Text>
-          <Text style={{ color: '#800303' }}>google       </Text>
+          <Text style={{ color: '#070530' }}>facebook </Text>
+          <Text style={{ color: '#800303' }}>google </Text>
           <Text style={{ color: '#32dde3' }}>twitter</Text>
         </Text>
       </Text>
-
       <Text style={styles.linkTextM}>
         Don't have an account?{' '}
         <Text style={styles.linkText} onPress={goToSignUp}>Register here</Text>
@@ -101,7 +74,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     paddingHorizontal: 20,
     paddingVertical: 10,
-    width:100,
+    width: 100,
   },
   buttonText: {
     color: '#fff',
@@ -141,15 +114,11 @@ const styles = StyleSheet.create({
     color: 'black',
     marginBottom: 20,
   },
-
   linkTextV: {
-   marginTop: 25,
-   marginBottom: 30,
+    marginTop: 25,
+    marginBottom: 30,
   },
-
-
   titlefgt: {
-   fontSize: 15,
-    
+    fontSize: 15,
   },
 });

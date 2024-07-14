@@ -5,6 +5,13 @@ import IntroPage from '../screens/IntroPage';
 import LoginScreen from '../screens/LoginScreen';
 import SignupScreen from '../screens/SignupScreen';
 import RegistrationScreen from '../screens/RegistrationScreen';
+import Dashboard from '../screens/Dashboard';
+import MyHealthScreen from '../screens/MyHealthScreen';
+import ReportScreen from '../screens/ReportScreen';
+import DoctorScreen from '../screens/DoctorScreen';
+import OrderScreen from '../screens/OrderScreen';
+import ScheduleScreen from '../screens/ScheduleScreen';
+import LogOutScreen from '../screens/LogOutScreen';
 
 const Stack = createStackNavigator();
 
@@ -16,6 +23,13 @@ export const AppNavigation = () => {
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="SignUp" component={SignupScreen} />
         <Stack.Screen name="Registration" component={RegistrationScreen} />
+        <Stack.Screen name="Dash" component={Dashboard} />
+        <Stack.Screen name="MyHealth" component={MyHealthScreen} />
+        <Stack.Screen name="Report" component={ReportScreen} />
+        <Stack.Screen name="Doctor" component={DoctorScreen} />
+        <Stack.Screen name="Order" component={OrderScreen} />
+        <Stack.Screen name="Schedule" component={ScheduleScreen} />
+        <Stack.Screen name="LogOut" component={LogOutScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
